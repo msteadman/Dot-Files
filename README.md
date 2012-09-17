@@ -1,3 +1,3 @@
-* Dot-Files
+= Dot-Files
 
 Backup important .files
