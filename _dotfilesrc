@@ -1,0 +1,6 @@
+[dotfiles]
+repository = ~/Projects/Dot-Files
+prefix = _
+ignore = [
+    '.git',
+    'README.md']
