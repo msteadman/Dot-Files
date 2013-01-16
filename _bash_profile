@@ -7,8 +7,15 @@
 #export PATH=".:$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
 
+# Homebrew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
+
 #export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:/usr/local/lib"
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib"
+#export DYLD_LIBRARY_PATH="/usr/local/mysql/lib"
 
 # Editor of choice
 #
@@ -28,11 +35,14 @@ alias tree='tree -C -I ".DS_Store|\.git|*.pyc" -a'
 alias ping='ping -c 5'
 
 # Python/VirtualEnv/Django
+export ENV_DJANGO=$HOME/Projects/Python/Env-Django
 #export WORKON_HOME="$HOME/.virtualenvs"       # default location
 export PROJECT_HOME="$HOME/Projects/Python"
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper_lazy.sh
 export VIRTUALENV_DISTRIBUTE=true
 
+# Set by .virtualenvs/postactivate
 #export DJANGO_SETTINGS_MODULE='project.settings.local'
 
 source $HOME/Projects/Python/django_bash_completion
