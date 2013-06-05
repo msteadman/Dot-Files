@@ -9,13 +9,9 @@
 *.bbprojectd
 *.sublime-workspace
 
-# Something Mac OS X python creates
-.Python
-
-# Mac .DS_Store files
-# exists in default .git/info/exclude from /usr/local/git/bin/git,
-# but not in default .git/info/exclude from /usr/bin/git (from Xcode4)
+# Mac OS X creations
 .DS_Store
+.Python
 
 # Emacs backup files
 # exists, but commented out of default .git/info/exclude
