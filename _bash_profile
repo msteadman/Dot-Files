@@ -6,24 +6,18 @@
 #
 #export PATH=".:$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
+export PATH="/usr/local/bin:$PATH"
 
 # Homebrew
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
-source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
-
-#export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:/usr/local/lib"
-#export DYLD_LIBRARY_PATH="/usr/local/mysql/lib"
 
 # Editor of choice
 #
 # export EDITOR=emacs       # Starts a new emacs
 # export EDITOR=emacsclient	# Uses a running emacs. Requires (server-start) in .emacs
 # export EDITOR=vim
-# export EDITOR="mate -w"
-# export GIT_EDITOR="mate -w" # Overrides core.editor, VISUAL, EDITOR
 export GIT_EDITOR="subl -n -w" # Overrides core.editor, VISUAL, EDITOR
 
 alias ls='ls -FG'
@@ -31,25 +25,27 @@ alias ll='ls -lh'
 alias la='ls -a'
 
 alias tree='tree -C -I ".DS_Store|\.git|*.pyc" -a'
-
 alias ping='ping -c 5'
+
+export PGDATA=/usr/local/var/postgres
 
 # Python/VirtualEnv/Django
 export ENV_DJANGO=$HOME/Projects/Python/Env-Django
-#export WORKON_HOME="$HOME/.virtualenvs"       # default location
-export PROJECT_HOME="$HOME/Projects/Python"
-#source /usr/local/bin/virtualenvwrapper.sh
-source /usr/local/share/python/virtualenvwrapper_lazy.sh
+#export WORKON_HOME=$HOME/.virtualenvs       # default location
+export PROJECT_HOME=$HOME/Projects/Python
 export VIRTUALENV_DISTRIBUTE=true
+
+VEW=/usr/local/bin/virtualenvwrapper.sh
+DBC=$HOME/Projects/Python/django_bash_completion
+#alias py='source $VEW'
+alias py='source $VEW; source $DBC'
 
 # Set by .virtualenvs/postactivate
 #export DJANGO_SETTINGS_MODULE='project.settings.local'
-
-source $HOME/Projects/Python/django_bash_completion
-alias pmc='python manage.py'
 
 alias did='cd $HOME/Projects/Python/DiD; source ENV/bin/activate; cd did'
 alias mymdb='cd $HOME/Projects/Python/MyMDb; source ENV/bin/activate; cd mymdbsite'
 
 # Ruby (on Rails)
-# source $HOME/.rvm/scripts/rvm
+#source $HOME/.rvm/scripts/rvm
+alias rb='source $HOME/.rvm/scripts/rvm'
