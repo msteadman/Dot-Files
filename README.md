@@ -1,3 +1,3 @@
 # Dot-Files
 
-Backup the important and useful bits of .files
+Starting points for .files.
