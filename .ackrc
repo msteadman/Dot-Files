@@ -1,0 +1,3 @@
+# Always ignore sublime-workspace files
+--ignore-file=ext:sublime-workspace
+--ignore-dir=migrations
