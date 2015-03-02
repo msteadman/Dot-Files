@@ -27,10 +27,14 @@ function ps1_context {
         echo -n "${v:+$v }"
     done
 }
-# export PS1="$(ps1_context)"'\u@\h:\W\$ '
-# export PS1="$(ps1_context)"'\h:\W \u\$ '
-source ~/Projects/Dot-Files/solarized_colors.sh
-export PS1="[ \[${BOLD}${CYAN}\]\u\[$BASE0\] @ \[$CYAN\]\h \[$BASE0\]| \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\] ]\n\[$ORANGE\]\$(ps1_context)\[$BASE0\]\$ \[$RESET\]"
+export PS1="[ \u @ \h | \w\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\$(parse_git_branch) ]\n${ps1_context}\$ "
+
+# how about a little color?
+if [ -f $HOME/Projects/Dot-Files/solarized_colors.sh ]; then
+    . $HOME/Projects/Dot-Files/solarized_colors.sh
+    alias colors='echo ${YELLOW}Yellow ${BASE0}${ORANGE}Orange ${BASE0}${RED}Red ${BASE0}${MAGENTA}Magenta ${BASE0}${VIOLET}Violet ${BASE0}${BLUE}Blue ${BASE0}${CYAN}Cyan ${BASE0}${GREEN}Green${BASE0}'
+    export PS1="[ \[${BOLD}${CYAN}\]\u\[$BASE0\] @ \[$CYAN\]\h \[$BASE0\]| \[$BLUE\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\] ]\n\[$ORANGE\]\$(ps1_context)\[$BASE0\]\$ \[$RESET\]"
+fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
