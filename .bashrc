@@ -8,6 +8,11 @@ alias rm='rm -i'  # a little self-protection
 alias ll='ls -lah'
 alias tree='tree -C -I ".DS_Store|\.git|*.pyc|_site|.sass-cache" -a'
 
+# pew
+alias cdvirtualenv='cd $VIRTUAL_ENV'
+alias cdsitepackages='cd $(pew sitepackages_dir)'
+alias cdproject='cd $(cat $VIRTUAL_ENV/.project)'
+
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
@@ -42,4 +47,4 @@ fi
 
 ENV_DJANGO=$HOME/Projects/Python/Env-Django
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh

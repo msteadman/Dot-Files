@@ -1,4 +1,19 @@
 set nocompatible                " no compatibility with legacy vi
+
+
+"" Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'editorconfig/editorconfig-vim'
+
+call vundle#end()
+
+colorscheme solarized
+
 syntax enable
 set ruler
 set encoding=utf-8
