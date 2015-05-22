@@ -16,6 +16,7 @@ colorscheme solarized
 
 syntax enable
 set ruler
+set laststatus=2
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
