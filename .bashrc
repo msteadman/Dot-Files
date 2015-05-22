@@ -6,7 +6,7 @@ fi
 
 alias rm='rm -i'  # a little self-protection
 alias ll='ls -lah'
-alias tree='tree -C -I ".DS_Store|\.git|*.pyc|_site|.sass-cache" -a'
+alias tree='tree -C -I ".DS_Store|\.git|\.svn|*.pyc|_site|.sass-cache" -a'
 
 # pew
 alias cdvirtualenv='cd $VIRTUAL_ENV'
