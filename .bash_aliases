@@ -2,8 +2,8 @@
 
 alias rm='rm -i'    # idiot check
 
-alias ll='ls -lah'
-alias la='ls -ah'
+alias ll='ls -lAh'
+alias la='ls -A'
 alias ld='ls -l | grep "^d"'
 
 alias tree='tree -C -I ".DS_Store|\.git|\.svn|*.pyc|_site|.sass-cache" -a'
