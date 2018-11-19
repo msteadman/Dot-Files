@@ -7,10 +7,9 @@ alias la='ls -A'
 alias ld='ls -l | grep "^d"'
 
 alias tree='tree -C -I ".DS_Store|\.git|\.svn|*.pyc|_site|.sass-cache" -a'
-
 alias ping='ping -c 5'
+alias mkd2='open -a Marked\ 2.app'
+alias ytdl='youtube-dl --format mp4'
 
-# pew versions of virtualenv commands
 alias cdvirtualenv='cd $VIRTUAL_ENV'
-alias cdsitepackages='cd $(pew sitepackages_dir)'
 alias cdproject='cd $(cat $VIRTUAL_ENV/.project)'

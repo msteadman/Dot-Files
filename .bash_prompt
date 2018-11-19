@@ -72,7 +72,9 @@ parse_git_branch () {
 function ps1_context {
     # For any of these bits of context that exist, display them and append
     # a space.
-    virtualenv=`basename "$VIRTUAL_ENV"`
+    if [ $VIRTUAL_ENV ]; then
+        virtualenv="•"
+    fi
     for v in "$virtualenv" "$PS1_CONTEXT"; do
         echo -n "${v:+$v }"
     done
