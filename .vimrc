@@ -1,6 +1,5 @@
 set nocompatible                " no compatibility with legacy vi
 
-
 "" Vundle setup
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,6 +8,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
@@ -32,3 +33,7 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ...unless they contain at least one uppercase letter
+
+"" Security
+set modelines=0
+set nomodeline
