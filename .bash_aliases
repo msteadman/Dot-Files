@@ -1,6 +1,8 @@
 # .bash_aliases
 
 alias rm='rm -i'    # idiot check
+alias cp='cp -i'
+alias mv='mv -i'
 
 alias ll='ls -lAh'
 alias la='ls -A'
