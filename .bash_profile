@@ -18,6 +18,10 @@ if command -v rbenv 1>/dev/null 2>&1; then
     eval "$(rbenv init -)"
 fi
 
+if command -v pipenv 1>/dev/null 2>&1; then
+    eval "$(pipenv --completion)"
+fi
+
 export PATH EDITOR CLICOLOR PIPENV_SHELL_FANCY
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
