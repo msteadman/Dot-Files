@@ -15,5 +15,3 @@ bind '"\e[B":history-search-forward'
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
-
-test -e ~/.iterm2_shell_integration.bash && source ~/.iterm2_shell_integration.bash
