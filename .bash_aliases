@@ -8,7 +8,7 @@ alias ll='ls -lAh'
 alias la='ls -A'
 alias ld='ls -l | grep "^d"'
 
-alias tree='tree -C -I ".DS_Store|\.git|\.svn|*.pyc|_site|.sass-cache" -a'
+alias tree='tree -C -I ".DS_Store|\.git|\.svn|*.pyc|_site|.sass-cache|.venv" -a'
 alias ping='ping -c 5'
 alias mkd2='open -a Marked\ 2.app'
 alias ytdl='youtube-dl --format mp4'
