@@ -12,17 +12,19 @@ PIPENV_SHELL_FANCY=1
 
 PATH=$HOME/.local/bin:$PATH
 
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
+if [ -t 0 ]; then
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+    fi
 
-if command -v rbenv 1>/dev/null 2>&1; then
-    eval "$(rbenv init -)"
-    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-fi
+    if command -v pipenv 1>/dev/null 2>&1; then
+        eval "$(pipenv --completion)"
+    fi
 
-if command -v pipenv 1>/dev/null 2>&1; then
-    eval "$(pipenv --completion)"
+    if command -v rbenv 1>/dev/null 2>&1; then
+        eval "$(rbenv init -)"
+        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+    fi
 fi
 
 export PATH EDITOR CLICOLOR PIPENV_SHELL_FANCY
