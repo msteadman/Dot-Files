@@ -12,6 +12,6 @@ unset file
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#    . $(brew --prefix)/etc/bash_completion
+#fi
