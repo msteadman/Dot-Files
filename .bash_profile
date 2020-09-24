@@ -12,8 +12,6 @@ PIPENV_SHELL_FANCY=1
 
 PATH=$HOME/.local/bin:$PATH
 
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
 if [ -t 0 ]; then
     if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv init -)"

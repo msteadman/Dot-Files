@@ -12,6 +12,4 @@ unset file
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#    . $(brew --prefix)/etc/bash_completion
-#fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
