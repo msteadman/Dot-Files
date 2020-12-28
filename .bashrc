@@ -9,7 +9,9 @@ for file in ~/.{bash_aliases,bash_prompt}; do
 done
 unset file
 
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+if [ -t 0 ]; then
+    bind '"\e[A":history-search-backward'
+    bind '"\e[B":history-search-forward'
 
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+fi
