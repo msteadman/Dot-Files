@@ -19,7 +19,7 @@ if [ -t 0 ]; then
     fi
 
     if command -v pipenv 1>/dev/null 2>&1; then
-        eval "$(pipenv --completion)"
+        eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
     fi
 
     if command -v pipx 1>/dev/null 2>&1; then
