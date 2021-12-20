@@ -13,9 +13,7 @@ if [ -t 0 ]; then
     bind '"\e[A":history-search-backward'
     bind '"\e[B":history-search-forward'
 
-    if command -v pipenv 1>/dev/null 2>&1; then
-        eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
-    fi
+    [ -r ~/.pipenv-complete.bash ] && source ~/.pipenv-complete.bash
 
     [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 fi
